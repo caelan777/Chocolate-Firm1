@@ -681,3 +681,53 @@ window.vraagBot       = stuurChatbericht
 window.bestelProduct  = (id) => voegToeAanWinkelwagen(id)
 window.showSuccess    = () => document.getElementById('successModal')?.classList.add('active')
 window.goToCollection = gaNaarCollectie
+
+function laadDashboardProducten() {
+
+  const container =
+  document.getElementById("producten");
+
+  if (!container) return;
+
+  const gebruikerEmail =
+  huidigGebruiker()?.email || "demo@vellin.nl";
+
+  const producten =
+  JSON.parse(
+    localStorage.getItem("geregistreerdeProducten")
+  ) || [];
+
+  const mijnProducten =
+  producten.filter(
+    p => p.gebruiker === gebruikerEmail
+  );
+
+  if (mijnProducten.length === 0) {
+
+    container.innerHTML = `
+      <p style="
+        color:#888;
+        padding:20px;
+      ">
+        Nog geen producten geregistreerd.
+      </p>
+    `;
+
+    return;
+  }
+
+  container.innerHTML =
+  mijnProducten.slice(0,3).map(product => `
+    <div class="product-card">
+      <h4>${product.naam}</h4>
+      <p>${product.herkomst}</p>
+      <small>
+        Houdbaar tot:
+        ${product.houdbaar}
+      </small>
+    </div>
+  `).join("");
+
+}if (document.getElementById("producten")) {
+    laadDashboardProducten();
+}

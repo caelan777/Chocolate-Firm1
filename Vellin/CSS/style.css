@@ -118,10 +118,14 @@ body {
   font-weight: 700;
 }
 
-.login-card h2 {
-  margin: 0;
-  font-size: 2rem;
-  color: var(--primary);
+.login-card{
+
+    width:100%;
+    max-width:420px;
+
+    margin:40px auto;
+
+    box-sizing:border-box;
 }
 
 .btn-secondary,
@@ -169,12 +173,11 @@ body {
 }
 
 
-.auth-card {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 0 26px 28px;
+.auth-card{
+
+    width:100%;
+
+    box-sizing:border-box;
 }
 
 input[type="email"],
@@ -1113,4 +1116,119 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.auth-page{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:30px 20px;
+
+    box-sizing:border-box;
+}
+
+.auth-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.auth-header h1{
+
+    color:#3D2817;
+
+    margin-top:10px;
+}
+
+.auth-card{
+
+    background:white;
+
+    padding:30px 24px;
+
+    border-radius:28px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.auth-card h2{
+
+    margin-top:0;
+
+    color:#3D2817;
+}
+
+.auth-card input{
+
+    width:100%;
+
+    padding:16px;
+
+    border:1px solid #ddd;
+
+    border-radius:16px;
+
+    margin-bottom:14px;
+
+    box-sizing:border-box;
+}
+
+.auth-card button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#6d3519;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:16px;
+
+    cursor:pointer;
+}
+
+/* Mobile login/register override */
+
+.hero-copy{
+    display:none !important;
+}
+
+.container{
+    max-width:430px !important;
+    margin:0 auto !important;
+    padding:20px !important;
+    display:block !important;
+    min-height:auto !important;
+}
+
+.hero-section{
+    display:block !important;
+    width:100% !important;
+    padding:0 !important;
+}
+
+.login-card{
+    width:100% !important;
+    max-width:none !important;
+    margin:0 !important;
+    padding:24px !important;
+}
+
+.auth-card{
+    width:100% !important;
+}
+
+.auth-footer{
+    padding:0 !important;
 }
